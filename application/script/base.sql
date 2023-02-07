@@ -1,10 +1,10 @@
-create database takalo;
+--create database takalo;
 
-use takalo;
+--use takalo;
 
 CREATE TABLE user (
     id int primary key auto_increment,
-    email varchar(255),
+    email varchar(255)s,
     password varchar(255),
     isAdmin boolean
 );
