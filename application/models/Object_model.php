@@ -33,9 +33,11 @@ class Object_model extends  CI_Model
         DAO_model::insert($connection,"photos","default,$lastId,'$photo_path'");
 
         $connection = null;
+
+        return $lastId;
     }
 
-    public static function getDistinctObject($name,$categorie)
+    public  function getDistinctObject($name,$categorie)
     {
         $connector = new PDO_Connector();
         $connection =$connector->connect();
@@ -43,5 +45,18 @@ class Object_model extends  CI_Model
         $object = DAO_model::selectAll($connection,"");
 
         $connection = null;
+
+        return $object;
     }
+    public  function getAllWithDetals()
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+
+        $object = DAO_model::selectAll($connection,"objet_details_view");
+
+        $connection = null;
+        return $object;
+    }
+
 }
