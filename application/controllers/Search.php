@@ -7,6 +7,6 @@ class Search extends CI_Controller
         $name =$this->input->post("name");
         $idCategorie =$this->input->post("categorie");
 
-        $object =
+
     }
 }
