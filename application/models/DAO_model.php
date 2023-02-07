@@ -8,7 +8,8 @@ class DAO_model {
 
         $result = array();
 
-        //$this->db->select("*")->where("id",1)->get("table");
+        // $this->db->select("*")->where("id",1)->get("table");
+
         $resSet = $connection->query($query);
         while ($eachResult = $resSet->fetch()) {
             array_push($result,$eachResult);
