@@ -18,6 +18,14 @@
     );
 
 
+    CREATE TABLE objet (
+        id int primary key auto_increment,
+        idUser int not null,
+        nom varchar(255),
+        prix float,
+        foreign key(idUser) references user(id)
+    );
+
     CREATE TABLE photos(
         id int primary key auto_increment,
         idObjet int not null,
@@ -30,15 +38,7 @@
         nom varchar(255) not null
     );
 
-    CREATE TABLE objet (
-        id int primary key auto_increment,
-        idUser int not null,
-        nom varchar(255),
-        prix float,
-        foreign key(idUser) references user(id),
-    );
-
-    CREATE TABLE details_objet VALUES (
+    CREATE TABLE details_objet  (
         id int primary key ,
         idObjet int not null,
         idCategorie int default 6,
@@ -54,5 +54,16 @@
         status varchar(255),
         foreign key (idUser) references user(id),
         foreign key (idObjetUser) references user(id), 
+        foreign key (idObjet) references objet(id)
+    );
+    --ty proposition ty mbola diso ilay ana fa efa nambaorintsika tany amla
+
+
+    CREATE TABLE confirmation(
+        id int primary key auto_increment,
+        idUser int not null,
+        idObjet int not null,
+        dateConfirmation datetime,
+        foreign key(idUser) references user(id),
         foreign key (idObjet) references objet(id)
     );
