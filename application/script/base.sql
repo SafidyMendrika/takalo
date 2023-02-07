@@ -41,7 +41,7 @@
     CREATE TABLE details_objet  (
         id int primary key auto_increment ,
         idObjet int not null,
-        idCategorie int default 6,
+        idCategorie int default 6,  
         foreign key (idObjet) references objet(id),
         foreign key (idCategorie) references categorie(id)
     );
