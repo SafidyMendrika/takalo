@@ -1,0 +1,13 @@
+.object-element{
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px grey;
+    padding: 0%;
+    width: 30%;
+    margin: 1%;
+}
+.object-element img{
+    height: 80%;
+    width: 100%;
+    margin: auto;
+}

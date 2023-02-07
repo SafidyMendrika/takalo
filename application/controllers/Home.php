@@ -19,6 +19,6 @@ class Home extends Session_Secure {
     }
     public function clientHome(){
         $this->checkSession("user",base_url("login/"));
-    $this->load->view("client");
+    $this->load->view("accueil");
 }
 }
