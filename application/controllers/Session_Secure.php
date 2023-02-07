@@ -2,9 +2,14 @@
 
 class Session_Secure extends  CI_Controller
 {
-    public function __construct($sessionName,$redirect_page)
+    public function __construct()
     {
         parent::__construct();
-        if(! $this->session->has_userdata($sessionName)) redirect($redirect_page);
     }
+    public function checkSession($sessionName,$redirect_page)
+    {
+        if(! $this->session->has_userdata($sessionName)) redirect($redirect_page);
+
+    }
+
 }
