@@ -18,7 +18,7 @@
                 <p>Password :</p><input type="passwprd" name="password" >
             </div>
             <p><input type="submit" value="Log"></p>
-            <p>Si vous etes admin, cliquer <a href="<?php echo base_url('login/adminLoginPage')?>"> ici </a></p>
+            <p>Si vous etes Admin, cliquer <a href="<?php echo base_url('login/adminLoginPage')?>"> ici </a></p>
         </form>
     </div>
 </body>
