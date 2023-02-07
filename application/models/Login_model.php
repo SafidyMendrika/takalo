@@ -18,6 +18,7 @@ class Login_model extends  CI_Model{
 
         if (count($user) != 0) return $user[0];
 
+        $connection = null;
         return false;
     }
     public  function  log($email,$password){
@@ -30,6 +31,8 @@ class Login_model extends  CI_Model{
 
         if (count($user) != 0) return $user[0];
 
+
+        $connection = null;
         return false;
     }
 }

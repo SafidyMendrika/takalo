@@ -14,7 +14,20 @@ class Login extends  CI_Controller
         }else{
             $this->load->view($link);
         }
+    }
 
+    function adminLogin($error = ""){
+        $link = "login";
+
+        $data = null;
+        if (strlen($error) != 0){
+            $data = array();
+            $data["error"] = $error;
+
+            $this->load->view($link,$data);
+        }else{
+            $this->load->view($link);
+        }
     }
     function logAdmin(){
         $this->load->model("Login_model");
@@ -24,7 +37,7 @@ class Login extends  CI_Controller
 
         $admin = $this->Login_model->logAsAdmin($mail,$password);
 
-        if ($admin == false) redirect(base_url("login/"));
+        if ($admin == false) redirect(base_url("login/adminLogin"));
 
        // $this->session->set_userdata("user",$admin);
 
