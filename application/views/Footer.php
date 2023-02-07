@@ -23,4 +23,4 @@
         <p style="margin-left: 361px;margin-bottom: 0;color: var(--bs-gray-900);background: var(--bs-gray-400);width: 162px;height: 24px;border-radius: 5px;">ETU001806-Anthony</p>
         <p style="margin-left: 363px;margin-top: 15px;background: var(--bs-gray-400);color: var(--bs-gray-900);width: 162px;border-radius: 5px;">ETU001801-Liana</p>
     </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo site_url("assets/bootstrap/js/bootstrap.min.js") ?>"></script>

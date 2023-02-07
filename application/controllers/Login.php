@@ -14,7 +14,20 @@ class Login extends  CI_Controller
         }else{
             $this->load->view($link);
         }
+    }
 
+    function adminLoginPage($error = ""){
+        $link = "AdminLogin";
+
+        $data = null;
+        if (strlen($error) != 0){
+            $data = array();
+            $data["error"] = $error;
+
+            $this->load->view($link,$data);
+        }else{
+            $this->load->view($link);
+        }
     }
     function logAdmin(){
         $this->load->model("Login_model");
@@ -24,11 +37,11 @@ class Login extends  CI_Controller
 
         $admin = $this->Login_model->logAsAdmin($mail,$password);
 
-        if ($admin == false) redirect(base_url("login/"));
+        if ($admin == false) redirect(base_url("login/adminLoginPage"));
 
-       // $this->session->set_userdata("user",$admin);
+       $this->session->set_userdata("user",$admin);
 
-        //redirect(base_url("home/"));
+        redirect(base_url("home/adminHome"));
     }
     function log(){
         $this->load->model("Login_model");
@@ -40,8 +53,8 @@ class Login extends  CI_Controller
 
         if ($admin == false) redirect(base_url("login/"));
 
-        //$this->session->set_userdata("user",$admin);
+        $this->session->set_userdata("user",$admin);
 
-      //  redirect(base_url("home/"));
+        redirect(base_url("home/"));
     }
 }

@@ -1,5 +1,9 @@
+*{
+  font-family: Arial;
+}
+
 .login-dark {
-  height: 1000px;
+  height: 100vh;
   background: #475d62 url(../../assets/img/star-sky.jpg);
   background-size: cover;
   position: relative;
@@ -15,7 +19,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #fff;
+  color: #000;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 h2{
