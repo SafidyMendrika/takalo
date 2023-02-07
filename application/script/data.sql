@@ -49,4 +49,3 @@ INSERT INTO proposition VALUES
 (default,4,2,8,'attente')
 ;
 
-

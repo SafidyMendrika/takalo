@@ -1,26 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+class Home extends Session_Secure {
 
-class Home extends CI_Controller {
+    public function __construct()
+    {
+        parent::__construct("user", base_url("login"));
+    }
+     public function index()
+    {
+        // code here brow
+    }
 
-	public function index()
-	{
-		$msg = "<h1>TONGASOA MIARAKA AMIKO</h1>";
-		$data = array();
-		$data["msg"] = $msg;
-		$this->load->view('login',$data);
-	}	
-	public function bonjour($nom = "badoda kely")	{
-		$msg =  "Manahoana lesy $nom";
-		$data = array();
-		$data["msg"] = $msg;
-		$this->load->view('Home',$data);
-
-	}
-	public function manger($plat = "vary",$boison = "cristaline")	{
-		$msg =  "Mihinana $plat miaraka amin'ny $boisson izaho";
-		$data = array();
-		$data["msg"] = $msg;
-		$this->load->view('Home',$msg);
-	}
+    public function adminHome(){
+        $this->load->view("admin");
+    }
 }

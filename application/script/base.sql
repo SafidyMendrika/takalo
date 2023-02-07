@@ -1,3 +1,4 @@
+
     create database takalo;
 
     use takalo;
