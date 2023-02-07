@@ -5,7 +5,8 @@ class Object_model extends  CI_Model
     public function __construct()
     {
         parent::__construct();
-
+        $this->load->model("PDO_Connector");
+        $this->load->model("DAO_model");
     }
 
     public function getObjectByClientId ($idClient)
@@ -13,7 +14,7 @@ class Object_model extends  CI_Model
         $connector =  new PDO_Connector();
         $connection =$connector->connect();
 
-        $object = DAO_model::selectAll($connection,"objet","idUser = $idClient");
+        $object = DAO_model::selectAll($connection,"objet_details_view","id_user = $idClient");
 
         $connection = null;
         return $object;
