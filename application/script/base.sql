@@ -65,7 +65,6 @@
         foreign key (idObjetMain) references objet(id), 
         foreign key (idObjetProposition) references objet(id)
     );
-    --ty proposition ty mbola diso ilay ana fa efa nambaorintsika tany amla
 
 
     CREATE TABLE confirmation(
