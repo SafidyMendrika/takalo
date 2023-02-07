@@ -19,9 +19,21 @@ class DAO_model extends CI_Model {
         return $result;
     }
 
-    public function getProductDetail($id){
+    public static function getProductDetail($id){
 
-        $this->db->select("*");
+    }
+
+    public static function insert($connection,$table,$values){
+        try {
+            $request = "INSERT INTO ".$table." VALUES (".$values.")";
+
+            $stm = $connection->exec($request);
+
+            $stm = null;
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 }
 
