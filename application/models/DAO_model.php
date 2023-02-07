@@ -1,5 +1,5 @@
 <?php
-class DAO_model {
+class DAO_model extends CI_Model {
 
     public static function selectAll($connection,$table,$condition = "")
     {
@@ -17,6 +17,11 @@ class DAO_model {
         $resSet = null;
 
         return $result;
+    }
+
+    public function getProductDetail($id){
+
+        $this->db->select("*");
     }
 }
 
