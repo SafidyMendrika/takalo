@@ -28,4 +28,12 @@ class Admin_DAO_model extends  CI_Model
 
         return $categories;
     }*/
+    public  function countUser()
+    {
+        return $this->db->select("*")->get("user")->num_rows();
+    }
+    public  function countExchange()
+    {
+        return $this->db->select("*")->get("proposition")->num_rows();
+    }
 }

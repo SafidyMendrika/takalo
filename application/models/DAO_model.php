@@ -1,5 +1,5 @@
 <?php
-class DAO_model {
+class DAO_model extends CI_Model {
 
     public static function selectAll($connection,$table,$condition = "")
     {
@@ -18,6 +18,23 @@ class DAO_model {
         $resSet = null;
 
         return $result;
+    }
+
+    public static function getProductDetail($id){
+
+    }
+
+    public static function insert($connection,$table,$values){
+        try {
+            $request = "INSERT INTO ".$table." VALUES (".$values.")";
+
+            $stm = $connection->exec($request);
+
+            $stm = null;
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 }
 
