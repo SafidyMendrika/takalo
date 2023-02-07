@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 		$msg = "<h1>TONGASOA MIARAKA AMIKO</h1>";
 		$data = array();
 		$data["msg"] = $msg;
-		$this->load->view('Home',$data);
+		$this->load->view('login',$data);
 	}	
 	public function bonjour($nom = "badoda kely")	{
 		$msg =  "Manahoana lesy $nom";
