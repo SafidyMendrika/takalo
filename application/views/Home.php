@@ -1,4 +1,7 @@
 <?php
+$this->load->model("DAO_model");
+$this->load->model("PDO_Connector");
+$this->load->model("Login_model");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +15,23 @@
     <h1>HOME</h1>
     <hr>
     <h2>message : </h2>
-    <p><?php echo $msg; ?></p>
+    <p><?php echo $msg ?></p>
+<hr>
+<hr>
+<?php
+$connector = new PDO_Connector();
+$connection = $connector->connect();
+
+$allPopo = DAO_model::selectAll($connection,"popo"," name='popo' ");
+
+var_dump($allPopo);
+
+$log = new Login_model();
+$adm = $log->logAsAdmin("men@gmail.com","azerty");
+
+var_dump($adm);
+?>
+
+    <a href="<?php echo base_url("login") ?>"> log</a>
 </body>
 </html>
