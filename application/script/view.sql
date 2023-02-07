@@ -23,4 +23,4 @@ CREATE OR REPLACE VIEW objet_photo_view AS
     photos.link AS link_photo
     FROM objet 
     JOIN photos ON objet.id = photos.idObjet 
-;
+;   

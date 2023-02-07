@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/bootstrap/css/bootstrap.min.css") ?>">
 </head>
 
-<body style="padding: 1%">
+<body style="">
     <ul class="nav nav-tabs" style="background: var(--bs-white);color: var(--bs-gray-900);">
         <li class="nav-item"><a class="nav-link active" href="#" style="background: var(--bs-gray-900);color: var(--bs-light);">TAKALO&lt;&gt;TAKALO</a></li>
         <li class="nav-item"><a class="nav-link" href="#" style="margin-left: 776px;color: var(--bs-gray-900);"><?php echo $admin_name; ?>(Admin)</a></li>
@@ -52,7 +52,8 @@
             </tbody>
         </table>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <?php $this->load->view("Footer"); ?>
+    <script src="<?php echo site_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
 </body>
 
 </html>

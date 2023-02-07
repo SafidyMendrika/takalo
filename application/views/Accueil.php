@@ -50,20 +50,7 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><p>Razafimalaza Safidy Mendrika <br> ETU000000</p></div>
-                <div class="col-md-4">
-                    <p>Rahaniraka Antsa Anthony <br> ETU001806</p> <br>
-                    <p>Copyright 2023</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Rabenja Mampionona Liana <br> ETU001801</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <?php $this->load->view("Footer"); ?>
     <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal1">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
