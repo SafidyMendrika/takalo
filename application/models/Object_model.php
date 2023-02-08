@@ -35,9 +35,12 @@ class Object_model extends  CI_Model
         //insertion photo
         DAO_model::insert($connection,"photos","default,$id,'$photo_path'");
 
+        $idCateg = $this->getCategorieId($connection,"autre");
+
+        DAO_model::insert($connection,"details_objet","default,$id,$idCateg");
+
         $connection = null;
 
-        return $lastId;
     }
 
     public  function getDistinctObject($name,$categorie)
@@ -76,5 +79,12 @@ class Object_model extends  CI_Model
 
         $connection = null;
         return $object;
+    }
+    public function getCategorieId($connection,$name)
+    {
+
+        $object = DAO_model::selectAll($connection,"categorie","nom = '$name'");
+
+        return $object[0]["id"];
     }
 }
