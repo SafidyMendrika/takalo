@@ -29,10 +29,15 @@
                         <div class="portfolio-caption" >
                             <h4><?php echo $object["nom_objet"]; ?>  <?php echo $object["prix_objet"] ;?> Ar</h4>
                             <h5><?php echo $object["nom_categorie"]; ?></h5>
+
+                            <p class="text-muted">de <?php echo $object["id_user"]; ?></p>
+                            <p><a href="<?php echo site_url("object/getByPrice")."/".$object["id_objet"]."/".$object["prix_objet"]."/10"?>">+/-10%</a></p>
+
                             <p class="text-muted">de <?php echo $object["user_nom"]; ?></p>
+
                         </div>
                         <div class="portfolio-hover" style="float: right;position: relative;top: -50px;right: 25px;z-index: 5">
-                            <a href="#"><div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div></a>
+                            <a href=""><div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div></a>
                         </div>
                     </div>
                 <?php } ?>

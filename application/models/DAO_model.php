@@ -10,6 +10,8 @@ class DAO_model extends CI_Model {
 
         // $this->db->select("*")->where("id",1)->get("table");
         $resSet = $connection->query($query);
+
+        echo $query;
         
         while ($eachResult = $resSet->fetch()) {
             array_push($result,$eachResult);

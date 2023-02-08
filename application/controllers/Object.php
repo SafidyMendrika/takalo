@@ -49,5 +49,14 @@ class Object extends CI_Controller
 
         redirect(base_url("home/adminHome"));
     }
+    public function getByPrice($id,$prix,$pourcentage){
+        $obj_model = new Object_model();
+        $price = $obj_model->getPrice($id,$prix,$pourcentage);
+        var_dump($price);
 
+        $data["price"] = $price;
+
+        $this->load->view("pourcentage",$data);
+
+    }
 }

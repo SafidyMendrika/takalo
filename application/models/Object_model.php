@@ -92,9 +92,22 @@ class Object_model extends  CI_Model
     {
         $connector = new PDO_Connector();
         $connection =$connector->connect();
-
-        DAO_model::update($connection,"details_objet"," idCategorie = $newCategorie"," idObjet = $idObj ");
+        
+              DAO_model::update($connection,"details_objet"," idCategorie = $newCategorie"," idObjet = $idObj ");
 
         $connection = null;
+    }
+    
+    public function getPrice($id,$prix,$pourcentage){
+        $min = $prix - ($prix*$pourcentage)/100;
+        $max = $prix + ($prix*$pourcentage)/100;
+
+        $connector = new PDO_Connector();
+        $connection = $connector->connect();
+
+        $object = DAO_model::selectAll($connection,"objet_details_view","prix_objet>=$min and prix_objet<=$max and id_user not in (select id from objet where id_user=$id)");
+        $connection = null;
+        return $object;
+
     }
 }
