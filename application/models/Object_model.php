@@ -28,7 +28,7 @@ class Object_model extends  CI_Model
         //insertion objet
         DAO_model::insert($connection,"objet","default,$idUser,$nom,$prix");
 
-        $lastId = DAO_model::selectAll($connection,"objet","id in (select max(id) from object)")[0]["max(id)"];
+        $lastId = DAO_model::selectAll($connection,"objet","id in (select max(id) from object)")[0]["id"];
 
         //insertion photo
         DAO_model::insert($connection,"photos","default,$lastId,'$photo_path'");

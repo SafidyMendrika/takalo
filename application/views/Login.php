@@ -25,7 +25,7 @@
                 <div class="illustration"><i class="icon ion-ios-locked-outline" style="background: var(--bs-white);color: var(--bs-gray-dark);"></i></div>
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="rasoa@mail.com"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="sosoa"></div>
-                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a><button class="btn btn-primary" type="button" style="margin-left: 80px;background: var(--bs-gray-900);">Sign in</button>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div><a href="<?php echo base_url("login/signinPage"); ?>"><button class="btn btn-primary"  type="button" style="margin-left: 80px;background: var(--bs-gray-900);">Sign in</button></a>
                 <div class="mb-3" style="padding:2% 0% 0% 0%"><p>Log as <a href="<?php echo base_url('login/adminLoginPage')?>"> Admin </a></p></div>
                  
             </form>
@@ -36,12 +36,23 @@
                 <div class="illustration"><i class="icon ion-ios-locked-outline" style="background: var(--bs-white);color: var(--bs-gray-dark);"></i></div>
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="mendrika@mail.com"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="mendrika"></div>
-                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a><button class="btn btn-primary" type="button" style="margin-left: 80px;background: var(--bs-gray-900);">Sign in</button>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div> 
                 <div class="mb-3" style="padding:2% 0% 0% 0%"><p>Log as <a href="<?php echo base_url('login/')?>"> Client </a></p></div>
-                
             </form>
 
-    <?php } ?>
+    <?php }else if (isset($page) && $page == "signIn") {?>
+
+    <form action="<?php echo site_url("login/signIn") ?>"method="post" style="background: var(--bs-white);">
+        <h2 class="visually">TAKALO SignIn</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline" style="background: var(--bs-white);color: var(--bs-gray-dark);"></i></div>
+        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value=""></div>
+        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value=""></div>
+        <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Nom" value=""></div>
+        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div>
+        <div class="mb-3" style="padding:2% 0% 0% 0%"><p>have already an account ? log as <a href="<?php echo base_url('login/')?>"> Client </a></p></div>
+    </form>
+
+<?php } ?>
 
         </section>
 <script src="<?php echo site_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>

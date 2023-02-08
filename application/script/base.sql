@@ -13,16 +13,9 @@
     CREATE TABLE user (
         id int primary key auto_increment,
         email varchar(255) not null,
+        name varchar(255) not null,
         password varchar(255) not null,
         isAdmin boolean
-    );
-
-    CREATE TABLE objet (
-        id int primary key auto_increment,
-        idUser int not null,
-        nom varchar(255),
-        prix float,
-        foreign key(idUser) references user(id)
     );
 
     CREATE TABLE objet (
