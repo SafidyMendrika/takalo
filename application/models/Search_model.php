@@ -15,7 +15,7 @@ class Search_model extends  CI_Model{
 
         $conditionQuery = "nom_objet like '%$name%'";
 
-        if ($categorie != -1) $conditionQuery = $conditionQuery." and id_categorie = $categorie";
+        if ($categorie != -1 && strlen($categorie) !=0) $conditionQuery = $conditionQuery." and id_categorie = $categorie";
 
         $result = DAO_model::selectAll($connection,"objet_details_view",$conditionQuery);
 

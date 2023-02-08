@@ -7,7 +7,7 @@
 <ul class="nav nav-tabs" style="">
     <li class="nav-item" style="padding: 1%"><a class="nav-link active" href="#" style="background: var(--bs-gray-900);color: var(--bs-light);">TAKALO&lt;&gt;TAKALO</a></li>
     <li class="nav-item" style="padding: 1%"><a class="nav-link" href="#" style="margin-left: 776px;color: var(--bs-gray-900);"><?php echo $admin_name; ?>(Admin)</a></li>
-    <li class="nav-item" style="padding: 1%"><a class="nav-link" href="<?php echo base_url("login/logout" )?>" style="color: var(--bs-gray-900);">Log out&nbsp;</a></li>
+    <li class="nav-item" style="padding: 1%"><a class="nav-link" href="<?php echo base_url("login/logout/admin" )?>" style="color: var(--bs-gray-900);">Log out&nbsp;</a></li>
 </ul>
 <ul class=" nav" style="display: flex;justify-content: space-around;padding: 1%">
     <li class="nav-item item" ><a class="nav-link " href="<?php echo site_url("home/adminHome")?>" >Gerer les Categories</a></li>
