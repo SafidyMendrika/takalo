@@ -13,6 +13,7 @@
     CREATE TABLE user (
         id int primary key auto_increment,
         email varchar(255) not null,
+        name varchar(255) not null,
         password varchar(255) not null,
         isAdmin boolean
     );

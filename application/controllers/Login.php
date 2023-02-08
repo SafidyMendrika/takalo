@@ -51,10 +51,26 @@ class Login extends  CI_Controller
         redirect(base_url("home/clientHome"));
     }
 
-    function logout()
+    public function logout()
     {
         $this->session->sess_destroy();
 
         redirect(base_url("login"));
+    }
+
+
+    function signinPage($error = ""){
+        $link = "login";
+
+        $data["page"] ="signIn";
+        if (strlen($error) != 0){
+            $data["error"] = $error;
+        }
+        $this->load->view($link,$data);
+    }
+
+    public function name($attributes)
+    {
+        // code here brow
     }
 }

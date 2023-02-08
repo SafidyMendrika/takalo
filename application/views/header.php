@@ -6,7 +6,9 @@
             <ul class="navbar-nav ms-auto text-uppercase">
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url("home/clientHome"); ?>">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url("object/ObjectsOf"); ?>">Mes Objets</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url("ajout/ajouter"); ?>">Ajouter Objet</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="">Actu</a></li>
                 <li class="nav-item"></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url("login/logout"); ?>">Log out</a></li>
