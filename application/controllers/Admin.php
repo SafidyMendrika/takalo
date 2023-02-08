@@ -38,4 +38,31 @@ class Admin extends Session_Secure
 
         $this->load->view("adminStatistique",$data);
     }
+
+    public function ajoutCategorie()
+    {
+
+        $sess = $this->session->admin;
+        $data["admin_name"] = $sess["name"];
+
+
+        $this->load->view("ajoutCategorie",$data);
+    }
+
+    public function saveCategorie()
+    {
+        $this->load->model("Input_checker");
+        $inp = new Input_checker();
+        if (!$inp->ckeckInput($this->input,"post",array("categorie"))) redirect(base_url(("admin/ajoutCategorie")));
+
+        $newCateg = $this->input->post("categorie");
+
+        $connec = new PDO_Connector();
+        $connection = $connec->connect();
+        DAO_model::insert($connection,"categorie","default,'$newCateg'");
+
+        $connection = null;
+
+        redirect(base_url("home/adminHome"));
+    }
 }

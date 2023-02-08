@@ -9,7 +9,7 @@
 </ul>
 <ul class="nav nav-tabs" style="background: var(--bs-gray);">
     <li class="nav-item" style="background: var(--bs-gray-600);"><a class="nav-link active" href="<?php echo site_url("home/adminHome")?>" style="background: var(--bs-gray);color: var(--bs-gray-900);">Gerer les Categories</a></li>
-    <li class="nav-item" style="background: var(--bs-gray);"><a class="nav-link" href="#" style="color: var(--bs-gray-900);">Ajouter un categorie</a></li>
+    <li class="nav-item" style="background: var(--bs-gray);"><a class="nav-link" href="<?php echo base_url("admin/ajoutCategorie") ?>" style="color: var(--bs-gray-900);">Ajouter un categorie</a></li>
     <li class="nav-item">
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" href="#" style="background: var(--bs-gray);color: var(--bs-gray-900);">A propos de mon compte</a></li>
