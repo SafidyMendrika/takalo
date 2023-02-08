@@ -31,8 +31,8 @@ class Object extends CI_Controller
         $data["categories"] = $categories;
 
         $this->load->view("Accueil",$data);
-
     }
+
 
 
 }
