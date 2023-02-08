@@ -22,51 +22,20 @@
     <section class="bg-light" id="portfolio">
         <div class="container">
             <div class="row ">
-                <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                        <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>T-shirt</h4>
-                        <p class="text-muted">de Rasoa</p>
+                <?php foreach ($objects as $object) { ?>
+                    <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
+                            <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
+                        </a>
+                        <div class="portfolio-caption" style="padding: 4%">
+                            <h4><?php echo $object["nom_objet"]; ?>  <?php echo $object["prix_objet"] ;?> Ar</h4>
+                            <h5><?php echo $object["nom_categorie"]; ?></h5>
+                            <p class="text-muted">de <?php echo $object["id_user"]; ?></p>
+                        </div>
+                        <div class="portfolio-hover" style="float: right;position: relative;top: -50px;right: 25px;z-index: 5">
+                            <a href="#"><div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div></a>
+                        </div>
                     </div>
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                        <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>T-shirt</h4>
-                        <p class="text-muted">de Rasoa</p>
-                    </div>
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                        <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>T-shirt</h4>
-                        <p class="text-muted">de Rasoa</p>
-                    </div>
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                        <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>T-shirt</h4>
-                        <p class="text-muted">de Rasoa</p>
-                    </div>
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div>
-                </div>
-
+                <?php } ?>
                 <!-- <div class="col-sm-6 col-md-4 portfolio-item"><a class="portfolio-link" href="#portfolioModal4" data-bs-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
@@ -81,20 +50,7 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><p>Razafimalaza Safidy Mendrika <br> ETU000000</p></div>
-                <div class="col-md-4">
-                    <p>Rahaniraka Antsa Anthony <br> ETU001806</p> <br>
-                    <p>Copyright 2023</p>
-                </div>
-                <div class="col-md-4">
-                    <p>Rabenja Mampionona Liana <br> ETU001801</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <?php $this->load->view("Footer"); ?>
     <div class="modal fade text-center portfolio-modal" role="dialog" tabindex="-1" id="portfolioModal1">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
