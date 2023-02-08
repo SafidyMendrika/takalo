@@ -29,7 +29,7 @@
                 else{
                     foreach ($price as $object) { ?>
                     <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                            <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
+                            <img class="img-fluid" src="<?php echo site_url("data/img/objet/".$object["link_photo"])?>">
                         </a>
                         <div class="portfolio-caption" style="padding: 4%">
                             <h4><?php echo $object["nom_objet"]; ?>  <?php echo $object["prix_objet"] ;?> Ar</h4>

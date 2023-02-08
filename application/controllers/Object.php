@@ -52,9 +52,13 @@ class Object extends CI_Controller
     public function getByPrice($id,$prix,$pourcentage){
         $obj_model = new Object_model();
         $price = $obj_model->getPrice($id,$prix,$pourcentage);
-        var_dump($price);
+        $container = array();
 
-        $data["price"] = $price;
+            foreach ($price as $b) {
+                array_push($container,$obj_model->getAllWithDetalsById($b["id_objet"]));
+            }
+
+        $data["price"] = $container;
 
         $this->load->view("pourcentage",$data);
 

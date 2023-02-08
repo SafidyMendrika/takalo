@@ -64,6 +64,16 @@ class Object_model extends  CI_Model
         $connection = null;
         return $object;
     }
+    public  function getAllWithDetalsById($id)
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+
+        $object = DAO_model::selectAll($connection,"objet_details_view ","id_objet = $id");
+
+        $connection = null;
+        return $object[0];
+    }
     function getPhotosCurrentIndex()
     {
         return $this->db->select("*")->get("photos")->num_rows();
