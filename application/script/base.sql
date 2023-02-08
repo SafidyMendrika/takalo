@@ -25,13 +25,7 @@
         foreign key(idUser) references user(id)
     );
 
-    CREATE TABLE objet (
-        id int primary key auto_increment,
-        idUser int not null,
-        nom varchar(255),
-        prix float,
-        foreign key(idUser) references user(id)
-    );
+   
 
     CREATE TABLE photos(
         id int primary key auto_increment,
