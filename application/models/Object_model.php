@@ -26,12 +26,14 @@ class Object_model extends  CI_Model
         $connection = $connector->connect();
 
         //insertion objet
-        DAO_model::insert($connection,"objet","default,$idUser,$nom,$prix");
+        DAO_model::insert($connection,"objet","default,$idUser,'$nom',$prix");
 
-        $lastId = DAO_model::selectAll($connection,"objet","id in (select max(id) from object)")[0]["max(id)"];
+        $lastId = DAO_model::selectAll($connection,"objet","id in (select max(id) from objet)");
+        $id = $lastId[0]["id"];
 
+        
         //insertion photo
-        DAO_model::insert($connection,"photos","default,$lastId,'$photo_path'");
+        DAO_model::insert($connection,"photos","default,$id,'$photo_path'");
 
         $connection = null;
 
@@ -59,5 +61,20 @@ class Object_model extends  CI_Model
         $connection = null;
         return $object;
     }
+    function getPhotosCurrentIndex()
+    {
+        return $this->db->select("*")->get("photos")->num_rows();
+        // code here brow
+    }
 
+    public function getAllCategorie()
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+
+        $object = DAO_model::selectAll($connection,"categorie");
+
+        $connection = null;
+        return $object;
+    }
 }

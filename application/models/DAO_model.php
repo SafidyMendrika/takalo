@@ -9,8 +9,8 @@ class DAO_model extends CI_Model {
         $result = array();
 
         // $this->db->select("*")->where("id",1)->get("table");
-
         $resSet = $connection->query($query);
+        
         while ($eachResult = $resSet->fetch()) {
             array_push($result,$eachResult);
         }
@@ -27,6 +27,7 @@ class DAO_model extends CI_Model {
     public static function insert($connection,$table,$values){
         try {
             $request = "INSERT INTO ".$table." VALUES (".$values.")";
+            echo $request;
 
             $stm = $connection->exec($request);
 
@@ -36,5 +37,7 @@ class DAO_model extends CI_Model {
             return false;
         }
     }
+
+
 }
 

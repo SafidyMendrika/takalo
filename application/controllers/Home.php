@@ -20,7 +20,7 @@ class Home extends Session_Secure {
         $this->checkSession("admin",base_url("login/adminLoginPage"));
 
         $sess = $this->session->admin;
-        $data["admin_name"] = $sess["password"];
+        $data["admin_name"] = $sess["name"];
 
         $objectModel = new Object_model();
 
@@ -32,13 +32,17 @@ class Home extends Session_Secure {
         $this->checkSession("user",base_url("login/"));
 
         $sess = $this->session->user;
-        $data["user_name"] = $sess["password"];
+        $data["user_name"] = $sess["name"];
         $data["user_id"] = $sess["id"];
 
         $objectModel = new Object_model();
 
         $data["objects"] = $objectModel->getAllWithDetals();
 
+        //load categorie
+
+        $categories = $objectModel->getAllCategorie();
+        $data["categories"] = $categories;
 
         $this->load->view("accueil",$data);
 }

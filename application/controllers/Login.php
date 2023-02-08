@@ -51,10 +51,41 @@ class Login extends  CI_Controller
         redirect(base_url("home/clientHome"));
     }
 
-    function logout()
+    public function logout()
     {
         $this->session->sess_destroy();
 
         redirect(base_url("login"));
+    }
+
+
+    function signinPage($error = ""){
+        $link = "login";
+
+        $data["page"] ="signIn";
+        if (strlen($error) != 0){
+            $data["error"] = $error;
+        }
+        $this->load->view($link,$data);
+    }
+
+    public function signin()
+    {
+        $this->load->model("login_model");
+        $this->load->model("Input_checker");
+
+        $input_checker = new Input_checker();
+
+        if (!$input_checker->ckeckInput($this->input,"post",array("name","password","email"))) redirect(base_url("login/signinPage"));
+
+        $name = $this->input->post("name");
+        $password = $this->input->post("password");
+        $email = $this->input->post("email");
+
+        $obj_mdl = new Login_model();
+
+        $obj_mdl->insertuser($name,$email,$password);
+
+        redirect(base_url( ));
     }
 }
