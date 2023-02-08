@@ -1,10 +1,10 @@
 INSERT INTO  user VALUES
-(default,'rasoa@mail.com','sosoa',false),
-(default,'naivo@mail.com','nana',false),
-(default,'koto@mail.com','koko',false),
-(default,'mendrika@mail.com','mendrika',true),
-(default,'liana@mail.com','liana',true),
-(default,'anthony@mail.com','anthony',true)
+(default,'rasoa@mail.com','sosoa','sosoa',false),
+(default,'naivo@mail.com','nana','nana',false),
+(default,'koto@mail.com','koko','koko',false),
+(default,'mendrika@mail.com','mendrika','mendrika',true),
+(default,'liana@mail.com','liana','liana',true),
+(default,'anthony@mail.com','anthony','anthony',true)
 ;
 
 INSERT INTO categorie VALUES 

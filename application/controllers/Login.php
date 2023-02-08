@@ -58,8 +58,19 @@ class Login extends  CI_Controller
         redirect(base_url("login"));
     }
 
-    public function signin()
+
+    function signinPage($error = ""){
+        $link = "login";
+
+        $data["page"] ="signIn";
+        if (strlen($error) != 0){
+            $data["error"] = $error;
+        }
+        $this->load->view($link,$data);
+    }
+
+    public function name($attributes)
     {
-        $this->load->view("Inscription");
+        // code here brow
     }
 }

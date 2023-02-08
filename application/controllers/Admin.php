@@ -28,7 +28,7 @@ class Admin extends Session_Secure
         $this->checkSession("admin",base_url("login/adminLoginPage"));
 
         $sess = $this->session->admin;
-        $data["admin_name"] = $sess["password"];
+        $data["admin_name"] = $sess["name"];
 
         $adm = new Admin_DAO_model();
 

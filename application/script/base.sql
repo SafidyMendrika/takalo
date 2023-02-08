@@ -13,6 +13,7 @@
     CREATE TABLE user (
         id int primary key auto_increment,
         email varchar(255) not null,
+        name varchar(255) not null,
         password varchar(255) not null,
         isAdmin boolean
     );
@@ -24,8 +25,6 @@
         prix float,
         foreign key(idUser) references user(id)
     );
-
-   
 
     CREATE TABLE photos(
         id int primary key auto_increment,
