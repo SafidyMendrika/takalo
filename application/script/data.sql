@@ -19,27 +19,29 @@ INSERT INTO categorie VALUES
 INSERT INTO objet VALUES
 (default,1,'t-shirt', 1500),
 (default,2,'polo', 2000),
-(default,3,'mario', 3000),
-(default,4,'lecteur DVD', 5500),
-(default,2,'buffet',7500),
-(default,3,'DVD malokila',2200),
-(default,1,'pokemon', 2500),
-(default,2,'blouson', 10000),
-(default,1,'projecteur', 1500),
-(default,1,'CD ', 1500)
+(default,3,'Pc bueau complet', 3000),
+(default,4,'Pul + ceinte', 5500),
+(default,1,'PS 4',7500),
+(default,1,'chaussure',2200)
 ;
 
 INSERT INTO details_objet VALUES
 (default,1,1),
 (default,2,1),
-(default,3,2),
-(default,4,5),
-(default,5,4),
-(default,6,3),
-(default,7,2),
-(default,8,1),
-(default,9,5)
+(default,3,5),
+(default,4,1),
+(default,5,5),
+(default,6,1)
 ;
+INSERT INTO photos VALUES
+(default,1,'1.png'),
+(default,2,'2.png'),
+(default,3,'3.jpg'),
+(default,4,'4.jpg'),
+(default,5,'5.jpg'),
+(default,6,'6.jpg')
+;
+
 
 INSERT INTO proposition VALUES 
 (default,1,1,2,'attente'),

@@ -51,9 +51,11 @@ class Login extends  CI_Controller
         redirect(base_url("home/clientHome"));
     }
 
-    public function logout()
+    public function logout($from = "")
     {
         $this->session->sess_destroy();
+
+        if($from == "admin") redirect(base_url("login/adminLoginPage"));
 
         redirect(base_url("login"));
     }

@@ -59,7 +59,7 @@ class Object_model extends  CI_Model
         $connector = new PDO_Connector();
         $connection =$connector->connect();
 
-        $object = DAO_model::selectAll($connection,"objet_details_view");
+        $object = DAO_model::selectAll($connection,"objet_details_view ");
 
         $connection = null;
         return $object;
