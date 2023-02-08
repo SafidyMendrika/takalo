@@ -26,6 +26,12 @@ class Home extends Session_Secure {
 
         $data["objects"] = $objectModel->getAllWithDetals();
 
+
+        //load categorie
+
+        $categories = $objectModel->getAllCategorie();
+        $data["categories"] = $categories;
+
         $this->load->view("homeadmin",$data);
     }
     public function clientHome(){

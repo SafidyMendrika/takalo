@@ -18,7 +18,7 @@
                     <th>nom</th>
                     <th>categories</th>
                     <th>Prix</th>
-                    <th>Liens</th>
+                    <th>modification</th>
                 </tr>
             </thead>
             <tbody style="margin-top: 0px;">
@@ -30,7 +30,21 @@
                     <td><?php echo $object["nom_objet"]; ?></td>
                     <td><?php echo $object["nom_categorie"]; ?></td>
                     <td><?php echo $object["prix_objet"]; ?> Ar</td>
-                    <td><a href="">Detail</a></td>
+                    <td>
+                        <form action="<?php echo base_url("object/editObjectCategorie") ?>" method="post">
+                            <input type="hidden" name="idObject" value="<?php echo $object["id_objet"]; ?>">
+                            <select name="idCategorie" id="">
+                                <?php foreach ($categories as $categorie) {?>
+
+                                    <option value="<?php echo $categorie["id"] ?>"
+                                        <?php if ($categorie["id"] == $object["id_categorie"]){echo "selected";} ?>
+                                    ><?php echo $categorie["nom"] ?></option>
+                               <?php } ?>
+                            </select>
+
+                            <input type="submit" value="update">
+                        </form>
+                    </td>
                 </tr>
             <?php } ?>
 

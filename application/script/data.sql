@@ -34,12 +34,11 @@ INSERT INTO details_objet VALUES
 (default,2,1),
 (default,3,2),
 (default,4,5),
-(default,2,4),
-(default,3,3),
-(default,1,2),
-(default,2,1),
-(default,1,5),
-(default,1,3)
+(default,5,4),
+(default,6,3),
+(default,7,2),
+(default,8,1),
+(default,9,5)
 ;
 
 INSERT INTO proposition VALUES 
