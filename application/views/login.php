@@ -26,8 +26,7 @@
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="rasoa@mail.com"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="sosoa"></div>
                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div><a href="<?php echo base_url("login/signinPage"); ?>"><button class="btn btn-primary"  type="button" style="margin-left: 80px;background: var(--bs-gray-900);">Sign in</button></a>
-                <div class="mb-3" style="padding:2% 0% 0% 0%"><p>Log as <a href="<?php echo base_url('login/adminLoginPage')?>"> Admin </a></p></div>
-                 
+
             </form>
     <?php }else if (isset($page) && $page == "admin") {?>
 
@@ -36,8 +35,7 @@
                 <div class="illustration"><i class="icon ion-ios-locked-outline" style="background: var(--bs-white);color: var(--bs-gray-dark);"></i></div>
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" value="mendrika@mail.com"></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="mendrika"></div>
-                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div> 
-                <div class="mb-3" style="padding:2% 0% 0% 0%"><p>Log as <a href="<?php echo base_url('login/')?>"> Client </a></p></div>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);">Log In</button></div>
             </form>
 
     <?php }else if (isset($page) && $page == "signIn") {?>

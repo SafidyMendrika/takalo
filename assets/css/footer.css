@@ -1,0 +1,9 @@
+.e-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+}
+footer{
+    font-family: Arial;
+}

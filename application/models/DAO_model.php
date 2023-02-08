@@ -39,5 +39,19 @@ class DAO_model extends CI_Model {
             return false;
         }
     }
+
+    public static function update($connection,$table,$set,$condition){
+        try {
+            $request = "UPDATE $table set $set where $condition" ;
+
+            $stm = $connection->exec($request);
+
+            $stm = null;
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
 }
 

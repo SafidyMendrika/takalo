@@ -35,9 +35,12 @@ class Object_model extends  CI_Model
         //insertion photo
         DAO_model::insert($connection,"photos","default,$id,'$photo_path'");
 
+        $idCateg = $this->getCategorieId($connection,"autre");
+
+        DAO_model::insert($connection,"details_objet","default,$id,$idCateg");
+
         $connection = null;
 
-        return $lastId;
     }
 
     public  function getDistinctObject($name,$categorie)
@@ -56,12 +59,45 @@ class Object_model extends  CI_Model
         $connector = new PDO_Connector();
         $connection =$connector->connect();
 
-        $object = DAO_model::selectAll($connection,"objet_details_view");
+        $object = DAO_model::selectAll($connection,"objet_details_view ");
 
         $connection = null;
         return $object;
     }
+    function getPhotosCurrentIndex()
+    {
+        return $this->db->select("*")->get("photos")->num_rows();
+        // code here brow
+    }
 
+    public function getAllCategorie()
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+
+        $object = DAO_model::selectAll($connection,"categorie");
+
+        $connection = null;
+        return $object;
+    }
+    public function getCategorieId($connection,$name)
+    {
+
+        $object = DAO_model::selectAll($connection,"categorie","nom = '$name'");
+
+        return $object[0]["id"];
+    }
+
+    public function updateCategorieOf($idObj,$newCategorie)
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+        
+              DAO_model::update($connection,"details_objet"," idCategorie = $newCategorie"," idObjet = $idObj ");
+
+        $connection = null;
+    }
+    
     public function getPrice($id,$prix,$pourcentage){
         $min = $prix - ($prix*$pourcentage)/100;
         $max = $prix + ($prix*$pourcentage)/100;
@@ -72,5 +108,6 @@ class Object_model extends  CI_Model
         $object = DAO_model::selectAll($connection,"objet_details_view","prix_objet>=$min and prix_objet<=$max and id_user not in (select id from objet where id_user=$id)");
         $connection = null;
         return $object;
+
     }
 }

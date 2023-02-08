@@ -9,6 +9,7 @@
     drop table objet;
     drop table details_objet;
     drop table proposition;
+    drop table confirmation;
 
     CREATE TABLE user (
         id int primary key auto_increment,

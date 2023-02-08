@@ -21,16 +21,20 @@
 
     <section class="bg-light" id="portfolio">
         <div class="container">
-            <div class="row ">
+            <div class="row element-container">
                 <?php foreach ($objects as $object) { ?>
                     <div class="col-sm-6 col-md-4 portfolio-item object-element"><a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                            <img class="img-fluid" src="<?php echo site_url("assets/img/objet/tshirt1.jpg")?>">
+                            <img class="" src="<?php echo site_url("data    /img/objet/".$object['link_photo']); ?>">
                         </a>
-                        <div class="portfolio-caption" style="padding: 4%">
+                        <div class="portfolio-caption" >
                             <h4><?php echo $object["nom_objet"]; ?>  <?php echo $object["prix_objet"] ;?> Ar</h4>
                             <h5><?php echo $object["nom_categorie"]; ?></h5>
+
                             <p class="text-muted">de <?php echo $object["id_user"]; ?></p>
                             <p><a href="<?php echo site_url("object/getByPrice")."/".$object["id_objet"]."/".$object["prix_objet"]."/10"?>">+/-10%</a></p>
+
+                            <p class="text-muted">de <?php echo $object["user_nom"]; ?></p>
+
                         </div>
                         <div class="portfolio-hover" style="float: right;position: relative;top: -50px;right: 25px;z-index: 5">
                             <a href=""><div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div></a>
