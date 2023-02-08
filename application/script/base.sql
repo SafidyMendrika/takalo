@@ -25,12 +25,12 @@
         foreign key(idUser) references user(id)
     );
 
-    CREATE TABLE objet (
+    CREATE TABLE proprietaire(
         id int primary key auto_increment,
         idUser int not null,
-        nom varchar(255),
-        prix float,
-        foreign key(idUser) references user(id)
+        idObjet int not null,
+        foreign key(idUser) references user(id),
+        foreign key(idObjet) references objet(id)
     );
 
     CREATE TABLE photos(
@@ -47,8 +47,7 @@
 
 
     CREATE TABLE details_objet  (
-        id int primary key auto_increment ,
-
+        id int primary key auto_increment,
         idObjet int not null,
         idCategorie int default 6,  
         foreign key (idObjet) references objet(id),
@@ -65,7 +64,6 @@
         foreign key (idObjetMain) references objet(id), 
         foreign key (idObjetProposition) references objet(id)
     );
-
 
     CREATE TABLE confirmation(
         id int primary key auto_increment,
