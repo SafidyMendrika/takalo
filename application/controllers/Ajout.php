@@ -5,14 +5,17 @@ class Ajout extends CI_Controller{
     }
 
     public function insert(){
+        try {
         $this->load->model("Object_model");
 
+        $md =  new Object_model();
         $path ='';
-        $config['upload_path'] = './data/img/objet';
+        $config['upload_path'] = "./data/img/objet";
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config['max_size'] = 50000;
+        $config['file_size'] = 500000;
         $config['max_width'] = 0;
         $config['max_height'] = 0;
+        $config['file_name'] = ($md->getPhotosCurrentIndex()+1).".png";
 
         $this->load->library('upload', $config);
 
@@ -30,9 +33,11 @@ class Ajout extends CI_Controller{
         $id = $this->session->user['id'];
         $nom = $this->input->post('nom');
         $prix = $this->input->post('prix');
-        $image = $this->input->post('image');
-        
+
         $this->Object_model->insertObject($id,$nom,$prix,$path);
         // redirect('home/clientHome');
+        }catch (Exception $e){
+            echo  $e;
+        }
     }
 }

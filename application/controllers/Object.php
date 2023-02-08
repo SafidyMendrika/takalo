@@ -26,8 +26,13 @@ class Object extends CI_Controller
 
         $data["objects"] = $objects;
 
+
+        $categories = $obj_model->getAllCategorie();
+        $data["categories"] = $categories;
+
         $this->load->view("Accueil",$data);
 
     }
+
 
 }
