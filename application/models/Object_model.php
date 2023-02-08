@@ -87,4 +87,14 @@ class Object_model extends  CI_Model
 
         return $object[0]["id"];
     }
+
+    public function updateCategorieOf($idObj,$newCategorie)
+    {
+        $connector = new PDO_Connector();
+        $connection =$connector->connect();
+
+        DAO_model::update($connection,"details_objet"," idCategorie = $newCategorie"," idObjet = $idObj ");
+
+        $connection = null;
+    }
 }
