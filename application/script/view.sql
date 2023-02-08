@@ -7,7 +7,8 @@ CREATE OR REPLACE VIEW objet_details_view AS
     objet.nom AS nom_objet,
     objet.prix AS prix_objet,
     categorie.id AS id_categorie,
-    categorie.nom AS nom_categorie
+    categorie.nom AS nom_categorie,
+    user.name AS user_nom
     FROM objet 
     JOIN details_objet ON objet.id = details_objet.idObjet 
     JOIN categorie ON categorie.id = details_objet.idCategorie  
